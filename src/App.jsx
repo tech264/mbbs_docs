@@ -179,7 +179,7 @@ const COUNTRY_CODES = [
 /* ─────────────────────────────────────────────────────────── */
 
 function LeadGate({ onVerified }) {
-  const [form, setForm] = useState({ name: '', email: '', dialCode: '+91', phone: '', dob: '' })
+  const [form, setForm] = useState({ name: '', email: '', dialCode: '+91', phone: '', dob: '2026-01-15' })
   const [stage, setStage] = useState('form') // 'form' | 'otp'
   const [regId, setRegId] = useState(null)
   const [otp, setOtp] = useState('')
@@ -278,10 +278,6 @@ function LeadGate({ onVerified }) {
                   required
                 />
               </div>
-            </div>
-            <div className="gate-field">
-              <label className="gate-label">Date of Birth</label>
-              <input className="gate-input" type="date" value={form.dob} onChange={set('dob')} required />
             </div>
             {error && <div className="gate-error">{error}</div>}
             <button className="gate-btn" type="submit" disabled={loading}>

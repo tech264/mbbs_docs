@@ -92,7 +92,6 @@
 }
 .gate-input:focus { border-color: var(--yellow); }
 .gate-input::placeholder { color: var(--grey2); }
-.gate-input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.6); }
 .gate-hint {
   font-size: 0.73rem;
   color: var(--grey2);
