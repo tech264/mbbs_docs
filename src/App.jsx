@@ -222,7 +222,12 @@ function LeadGate({ onVerified }) {
       const res = await fetch(`${API}/verify-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ registrationId: regId, otp, remark: 'MBBS Abroad Guide' }),
+        body: JSON.stringify({
+          registrationId: regId,
+          otp,
+          remark: 'MBBS Abroad Guide',
+          source: 'guide'
+        }),
       })
       const data = await res.json()
       if (!res.ok || !data.success) {
