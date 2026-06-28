@@ -1345,7 +1345,12 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   if (!verified) {
-    return <LeadGate onVerified={() => setVerified(true)} />
+    return <LeadGate onVerified={() => {
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Contact');
+      }
+      setVerified(true)
+    }} />
   }
 
   const goTo = (id) => {
